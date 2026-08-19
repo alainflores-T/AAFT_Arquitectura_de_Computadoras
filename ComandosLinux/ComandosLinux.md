@@ -34,6 +34,39 @@ Este comando desglosa la arquitectura, topología y capacidades del procesador f
 
 ---
 
+# Resultado del comando `lspci` en VirtualBox
+
+
+---
+
+## Desglose línea por línea
+
+| Dirección BDF | Categoría del dispositivo | Descripción y función |
+| :--- | :--- | :--- |
+| **`00:00.0`** | `Host bridge` | **Puente de la Placa Base:** Chipset virtual *Intel 440FX* (placa base emulada clásica). |
+| **`00:01.0`** | `ISA bridge` | **Puente ISA:** Interfaz de compatibilidad para el bus de hardware legado. |
+| **`00:01.1`** | `IDE interface` | **Controlador IDE:** Controlador para unidades ópticas (CD/DVD) o discos en bus IDE. |
+| **`00:02.0`** | `VGA compatible controller` | **Tarjeta de video:** Adaptador de pantalla virtual *VMware SVGA II* proporcionado por VirtualBox. |
+| **`00:03.0`** | `Ethernet controller` | **Tarjeta de red:** Controlador *Intel 82540EM Gigabit Ethernet* para la conexión a red/internet. |
+| **`00:04.0`** | `System peripheral` | **VirtualBox Guest Service:** Componente encargado de la integración de las *Guest Additions* (portapapeles compartido, redimensionado de pantalla, etc.). |
+| **`00:05.0`** | `Multimedia audio controller` | **Tarjeta de sonido:** Controlador de audio emulado *Intel 82801AA AC'97*. |
+| **`00:06.0`** | `USB controller` | **Controlador USB Básico:** Controlador *Apple KeyLargo/Intrepid USB* para emular entrada de dispositivos. |
+| **`00:07.0`** | `Bridge` | **Controlador ACPI:** Gestión de energía e interfaz para comandos de apagado/suspensión desde el hipervisor. |
+| **`00:0b.0`** | `USB controller` | **Controlador USB 2.0:** Controlador EHCI (*Intel ICH6 Family*) para periféricos USB 2.0. |
+| **`00:0d.0`** | `SATA controller` | **Controlador SATA (AHCI):** Controladora del disco duro virtual principal de Ubuntu. |
+
+---
+
+## Aspectos Clave
+
+1. **Estructura BDF:** La primera columna (ejemplo: `00:03.0`) indica el mapa de dirección en el bus:
+   - **`00`**: Número de Bus PCI.
+   - **`03`**: Número de Dispositivo.
+   - **`.0`**: Número de Función dentro del chip.
+2. **Compatibilidad:** VirtualBox emula hardware muy estandarizado (Intel 440FX, tarjetas Intel de red/audio) para garantizar que la mayoría de los sistemas operativos incluyan los controladores de serie sin necesidad de instalaciones adicionales.
+
+---
+
 ## 2. Comando `lsblk` (Dispositivos de Bloques)
 
 Este comando genera el mapa de dispositivos de almacenamiento por bloques, evidenciando cómo el sistema estructura los discos, particiones y volúmenes montados.
