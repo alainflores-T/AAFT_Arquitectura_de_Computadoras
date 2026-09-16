@@ -46,36 +46,47 @@ vector<int> scoreboard_before(const string &exam) {
     return scoreboard;
 }
 
-// 2. TU CÓDIGO OPTIMIZADO (AFTER)
-// Versión After real (sin asignación dinámica en el bucle)
+
+
+
+
 vector<int> scoreboard_after(const string &exam) {
     vector<int> result;
-    result.reserve(2); // Reserva espacio previo
+    result.reserve(2); // Evita reasignaciones de memoria dinámica
 
+    const char* str = exam.c_str();
+    size_t len = exam.length();
     size_t i = 0;
-    size_t n = exam.size();
 
-    while (i < n && result.size() < 2) {
-        // 1. Saltar espacios
-        while (i < n && exam[i] == ' ') ++i;
-        if (i >= n) break;
+    while (i < len && result.size() < 2) {
+        // 1. Omitir espacios iniciales
+        while (i < len && str[i] == ' ') ++i;
+        if (i >= len) break;
 
-        // 2. Delimitar la palabra sin copiarla (string_view)
         size_t start = i;
-        while (i < n && exam[i] != ' ') ++i;
-        string_view word(&exam[start], i - start);
+        while (i < len && str[i] != ' ') ++i;
+        size_t word_len = i - start;
 
-        // 3. Comparaciones rápidas por longitud y contenido
-        if (word == "one") result.push_back(1);
-        else if (word == "two") result.push_back(2);
-        else if (word == "three") result.push_back(3);
-        else if (word == "four") result.push_back(4);
-        else if (word == "five") result.push_back(5);
-        else if (word == "six") result.push_back(6);
-        else if (word == "seven") result.push_back(7);
-        else if (word == "eight") result.push_back(8);
-        else if (word == "nine") result.push_back(9);
-        else if (word == "zero" || word == "nil" || word == "nothing") result.push_back(0);
+        const char* w = &str[start];
+
+        // 2. Filtrar primero por longitud de palabra para minimizar comparaciones
+        if (word_len == 3) {
+            if (w[0] == 'o' && w[1] == 'n' && w[2] == 'e') result.push_back(1);
+            else if (w[0] == 't' && w[1] == 'w' && w[2] == 'o') result.push_back(2);
+            else if (w[0] == 's' && w[1] == 'i' && w[2] == 'x') result.push_back(6);
+            else if (w[0] == 'n' && w[1] == 'i' && w[2] == 'l') result.push_back(0);
+        } else if (word_len == 4) {
+            if (w[0] == 'f' && w[1] == 'o' && w[2] == 'u' && w[3] == 'r') result.push_back(4);
+            else if (w[0] == 'f' && w[1] == 'i' && w[2] == 'v' && w[3] == 'e') result.push_back(5);
+            else if (w[0] == 'n' && w[1] == 'i' && w[2] == 'n' && w[3] == 'e') result.push_back(9);
+            else if (w[0] == 'z' && w[1] == 'e' && w[2] == 'r' && w[3] == 'o') result.push_back(0);
+        } else if (word_len == 5) {
+            if (w[0] == 't' && w[1] == 'h' && w[2] == 'r' && w[3] == 'e' && w[4] == 'e') result.push_back(3);
+            else if (w[0] == 'e' && w[1] == 'i' && w[2] == 'g' && w[3] == 'h' && w[4] == 't') result.push_back(8);
+            else if (w[0] == 's' && w[1] == 'e' && w[2] == 'v' && w[3] == 'e' && w[4] == 'n') result.push_back(7);
+        } else if (word_len == 7) {
+            if (w[0] == 'n' && w[1] == 'o' && w[2] == 't' && w[3] == 'h' && w[4] == 'i' && w[5] == 'n' && w[6] == 'g') result.push_back(0);
+        }
     }
 
     return result;
