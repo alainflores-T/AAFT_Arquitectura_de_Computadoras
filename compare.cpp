@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <chrono>
 #include <iomanip>
+#include <string_view>
 
 using namespace std;
 
@@ -46,26 +47,35 @@ vector<int> scoreboard_before(const string &exam) {
 }
 
 // 2. TU CÓDIGO OPTIMIZADO (AFTER)
-vector<int> scoreboard_after(const string &string_score) {
-    static const unordered_map<string, int> number_map = {
-        {"nil", 0}, {"zero", 0}, {"nothing", 0},
-        {"one", 1}, {"two", 2}, {"three", 3},
-        {"four", 4}, {"five", 5}, {"six", 6},
-        {"seven", 7}, {"eight", 8}, {"nine", 9}
-    };
-
+// Versión After real (sin asignación dinámica en el bucle)
+vector<int> scoreboard_after(const string &exam) {
     vector<int> result;
-    result.reserve(2);
+    result.reserve(2); // Reserva espacio previo
 
-    stringstream ss(string_score);
-    string word;
+    size_t i = 0;
+    size_t n = exam.size();
 
-    while (ss >> word) {
-        auto it = number_map.find(word);
-        if (it != number_map.end()) {
-            result.push_back(it->second);
-            if (result.size() == 2) break;
-        }
+    while (i < n && result.size() < 2) {
+        // 1. Saltar espacios
+        while (i < n && exam[i] == ' ') ++i;
+        if (i >= n) break;
+
+        // 2. Delimitar la palabra sin copiarla (string_view)
+        size_t start = i;
+        while (i < n && exam[i] != ' ') ++i;
+        string_view word(&exam[start], i - start);
+
+        // 3. Comparaciones rápidas por longitud y contenido
+        if (word == "one") result.push_back(1);
+        else if (word == "two") result.push_back(2);
+        else if (word == "three") result.push_back(3);
+        else if (word == "four") result.push_back(4);
+        else if (word == "five") result.push_back(5);
+        else if (word == "six") result.push_back(6);
+        else if (word == "seven") result.push_back(7);
+        else if (word == "eight") result.push_back(8);
+        else if (word == "nine") result.push_back(9);
+        else if (word == "zero" || word == "nil" || word == "nothing") result.push_back(0);
     }
 
     return result;
