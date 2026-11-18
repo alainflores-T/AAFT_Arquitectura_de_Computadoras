@@ -1,0 +1,12 @@
+CIRCUITO CUÁNTICO:
+     ┌───┐     ┌─┐   
+q_0: ┤ H ├──■──┤M├───
+     └───┘┌─┴─┐└╥┘┌─┐
+q_1: ─────┤ X ├─╫─┤M├
+          └───┘ ║ └╥┘
+c: 2/═══════════╩══╩═
+                0  1 
+
+RESULTADOS DE LA MEDICIÓN (10000 disparos):
+Estado |00⟩: 5031 ocurrencias (50.31%)
+Estado |11⟩: 4969 ocurrencias (49.69%)
