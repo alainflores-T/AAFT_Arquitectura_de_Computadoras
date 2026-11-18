@@ -1,0 +1,3 @@
+VERIFICACIÓN EN EL CÚBIT DE BOB (q2):
+P(|0⟩): 75.25% (Teórico: 75.00%)
+P(|1⟩): 24.75% (Teórico: 25.00%)
