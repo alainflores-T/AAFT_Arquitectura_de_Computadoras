@@ -1,0 +1,2 @@
+Qiskit Core: 2.6.2
+Aer Simulator OK

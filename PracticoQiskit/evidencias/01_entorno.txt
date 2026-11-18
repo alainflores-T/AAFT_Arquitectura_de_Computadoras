@@ -1,0 +1,26 @@
+$ cat /etc/os-release | head -3
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+$ uname -m
+x86_64
+$ python3 --version
+Python 3.13.5
+$ git --version
+git version 2.47.3
+$ dpkg -s build-essential python3-venv python3-dev | grep -E "^(Package|Status)"
+dpkg-query: package 'build-essential' is not installed and no information is available
+dpkg-query: package 'python3-dev' is not installed and no information is available
+Package: python3-venv
+Status: install ok installed
+$ mkdir -p ~/laboratorio_cuantica  (equivalente: carpeta de trabajo /workspace/qlab)
+$ python3 -m venv .venv && source .venv/bin/activate
+$ which python3
+/workspace/qlab/.venv/bin/python3
+$ pip --version
+pip 26.3 from /workspace/qlab/.venv/lib/python3.13/site-packages/pip (python 3.13)
+$ pip list | grep -i -E "qiskit|matplotlib|pylatexenc"
+matplotlib        3.11.2
+pylatexenc        2.11
+qiskit            2.6.2
+qiskit-aer        0.18.4
