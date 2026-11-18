@@ -1,0 +1,4 @@
+Polo Norte (theta = 0)              -> P(|0⟩): 100.0% | P(|1⟩):   0.0%
+Ángulo 45° (theta = pi/4)           -> P(|0⟩):  85.7% | P(|1⟩):  14.3%
+Ecuador (theta = pi/2, Estado |+>)  -> P(|0⟩):  50.0% | P(|1⟩):  50.0%
+Polo Sur (theta = pi, Estado |1>)   -> P(|0⟩):   0.0% | P(|1⟩): 100.0%
