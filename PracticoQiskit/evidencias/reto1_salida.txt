@@ -1,0 +1,18 @@
+VECTOR DE ESTADO (orden Qiskit |q1 q0>):
+  |00>: +0.0000+0.0000j
+  |01>: +0.7071+0.0000j
+  |10>: +0.7071+0.0000j
+  |11>: +0.0000+0.0000j
+
+CIRCUITO CUÁNTICO (Reto 1):
+     ┌───┐          ┌─┐   
+q_0: ┤ H ├──■───────┤M├───
+     └───┘┌─┴─┐┌───┐└╥┘┌─┐
+q_1: ─────┤ X ├┤ X ├─╫─┤M├
+          └───┘└───┘ ║ └╥┘
+c: 2/════════════════╩══╩═
+                     0  1 
+
+RESULTADOS DE LA MEDICIÓN (10000 disparos):
+Estado |01⟩: 5070 ocurrencias (50.70%)
+Estado |10⟩: 4930 ocurrencias (49.30%)
