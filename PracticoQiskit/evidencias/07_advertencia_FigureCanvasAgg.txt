@@ -1,0 +1,3 @@
+/workspace/qlab/PracticoQiskit/evidencias/../demo_advertencia_backend.py:13: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()  # <- aquí aparece la advertencia: no hay ventana donde mostrar la figura
+plt.show() no abrió ninguna ventana (backend: Agg)

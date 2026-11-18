@@ -1,0 +1,12 @@
+guardada: lab1_circuito.png
+guardada: lab1_histograma.png
+guardada: lab2_curva_probabilidad.png
+guardada: lab2_esferas_bloch.png
+guardada: lab3_circuito_balanceada_identidad.png
+guardada: lab3_histograma.png
+guardada: lab4_circuito.png
+guardada: lab4_histograma_bob.png
+guardada: reto1_circuito.png
+guardada: reto1_histograma.png
+guardada: reto2_histograma_sin_x.png
+guardada: reto2_circuito_sin_x.png

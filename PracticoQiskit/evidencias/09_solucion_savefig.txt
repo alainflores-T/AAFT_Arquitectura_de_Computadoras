@@ -1,0 +1,1 @@
+Figura guardada con savefig en figuras/circuito_solucion_savefig.png (sin advertencias)
