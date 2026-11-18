@@ -1,0 +1,4 @@
+Oráculo: constante_0            | Medición q0: '0' -> Función CONSTANTE
+Oráculo: constante_1            | Medición q0: '0' -> Función CONSTANTE
+Oráculo: balanceada_identidad   | Medición q0: '1' -> Función BALANCEADA
+Oráculo: balanceada_inversa     | Medición q0: '1' -> Función BALANCEADA
