@@ -1,0 +1,12 @@
+=== CON X en la ancilla (correcto) ===
+Oráculo: constante_0            | conteos q0: {'0': 1000} -> CONSTANTE  | real: CONSTANTE  | OK
+Oráculo: constante_1            | conteos q0: {'0': 1000} -> CONSTANTE  | real: CONSTANTE  | OK
+Oráculo: balanceada_identidad   | conteos q0: {'1': 1000} -> BALANCEADA | real: BALANCEADA | OK
+Oráculo: balanceada_inversa     | conteos q0: {'1': 1000} -> BALANCEADA | real: BALANCEADA | OK
+
+=== SIN X en la ancilla (Reto 2) ===
+Oráculo: constante_0            | conteos q0: {'0': 1000} -> CONSTANTE  | real: CONSTANTE  | OK
+Oráculo: constante_1            | conteos q0: {'0': 1000} -> CONSTANTE  | real: CONSTANTE  | OK
+Oráculo: balanceada_identidad   | conteos q0: {'0': 1000} -> CONSTANTE  | real: BALANCEADA | ERROR (veredicto incorrecto)
+Oráculo: balanceada_inversa     | conteos q0: {'0': 1000} -> CONSTANTE  | real: BALANCEADA | ERROR (veredicto incorrecto)
+
